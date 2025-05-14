@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lembretes para Tutores de Cães</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <div class="progress-bar">
+          <div class="progress" id="progress"></div>
+        </div>
+
+        <!-- Bloco 1 - Apresentação -->
+        <div class="form-block active" id="block-1">
+          <h1>Espaço exclusivo para tutores dedicados 🐶</h1>
+          <div class="intro-text">
+            <p>
+              A gente sabe que não é fácil dar conta da própria rotina e ainda
+              lembrar de tudo que seu cãozinho precisa. Com a sua atenção e
+              carinho, cada cuidado faz a diferença na qualidade de vida dele.
+            </p>
+
+            <p>A gente só te dá aquele empurrãozinho! 😉</p>
+
+            <p>
+              Preencha os campos com seus dados e receba no WhatsApp avisos
+              personalizados para aqueles:
+            </p>
+            <ul>
+              <li>💙 Corações frágeis, mas cheios de amor,</li>
+              <li>
+                🍭 Que precisam de um lembrete extra para manter a glicemia
+                equilibrada,
+              </li>
+              <li>
+                💧 Que mostram força até quando os rins pedem mais cuidado.
+              </li>
+            </ul>
+          </div>
+          <button class="btn next-btn" data-next="block-2">Começar</button>
+        </div>
+
+        <!-- Bloco 2 - Dados do tutor -->
+        <div class="form-block" id="block-2">
+          <h2>Seus dados</h2>
+          <div class="form-group">
+            <label for="nomeTutor">Nome</label>
+            <input type="text" id="nomeTutor" name="nomeTutor" required />
+          </div>
+          <div class="form-group">
+            <label for="sobrenomeTutor">Sobrenome</label>
+            <input
+              type="text"
+              id="sobrenomeTutor"
+              name="sobrenomeTutor"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="whatsappTutor"
+              >WhatsApp (DDD + 9 + número, ex: 11912345678)</label
+            >
+            <input
+              type="tel"
+              id="whatsappTutor"
+              name="whatsappTutor"
+              required
+            />
+            <div class="error-message" id="whatsapp-error">
+              Por favor, digite um número no formato: DDD + 9 + número (ex:
+              11912345678)
+            </div>
+          </div>
+          <button class="btn back-btn" data-back="block-1">Voltar</button>
+          <button class="btn next-btn" data-next="block-3">Próximo</button>
+        </div>
+
+        <!-- Bloco 3 - Nome do pet -->
+        <div class="form-block" id="block-3">
+          <h2>Nome do seu pet</h2>
+          <p>Coloque aqui o nome do seu cão 👇</p>
+          <div class="form-group">
+            <input type="text" id="nomePet" name="nomePet" required />
+          </div>
+          <button class="btn back-btn" data-back="block-2">Voltar</button>
+          <button class="btn next-btn" data-next="block-4">Próximo</button>
+        </div>
+
+        <!-- Bloco 4 - Lembretes -->
+        <div class="form-block" id="block-4">
+          <h2>Quais lembretes você quer receber?</h2>
+          <p>
+            Selecione os lembretes que deseja receber para
+            <span id="pet-name-display">seu pet</span>:
+          </p>
+
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="lembrete-vacinas"
+                name="lembretes"
+                value="vacinas"
+              />
+              <label for="lembrete-vacinas">📌 Vacinas</label>
+            </div>
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="lembrete-remedios"
+                name="lembretes"
+                value="remedios"
+              />
+              <label for="lembrete-remedios">💊 Remédios</label>
+            </div>
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="lembrete-comida"
+                name="lembretes"
+                value="comida"
+              />
+              <label for="lembrete-comida">🍪 Hora de Comer</label>
+            </div>
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="lembrete-agua"
+                name="lembretes"
+                value="agua"
+              />
+              <label for="lembrete-agua">🚰 Hora de repor a água</label>
+            </div>
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="lembrete-glicemia"
+                name="lembretes"
+                value="glicemia"
+              />
+              <label for="lembrete-glicemia">⏱️ Medição de glicemia</label>
+            </div>
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="lembrete-insulina"
+                name="lembretes"
+                value="insulina"
+              />
+              <label for="lembrete-insulina">💉 Aplicação de insulina</label>
+            </div>
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="lembrete-consulta"
+                name="lembretes"
+                value="consulta"
+              />
+              <label for="lembrete-consulta">🏥 Próxima consulta</label>
+            </div>
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="lembrete-documentacao"
+                name="lembretes"
+                value="documentacao"
+              />
+              <label for="lembrete-documentacao">📝 Documentação do dia</label>
+            </div>
+          </div>
+
+          <div class="form-navigation">
+            <button type="button" class="btn back-btn" data-back="block-3">
+              Voltar
+            </button>
+            <button type="button" class="btn next-btn">Próximo</button>
+          </div>
+        </div>
+
+        <!-- Bloco 5 - Vacinas -->
+        <div
+          class="form-block conditional-block"
+          id="block-5"
+          data-condition="vacinas"
+        >
+          <h2>Quais vacinas você quer receber lembretes?</h2>
+          <p class="alert">
+            🚨 É importante saber se a vacina da leishmaniose (calazar) está
+            suspensa no momento pelo Ministério da Agricultura e Pecuária. Por
+            isso, converse com o seu veterinário para entender as melhores
+            maneiras de proteger o seu cachorro!
+          </p>
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="vacina-polivalente"
+                name="vacinas"
+                value="polivalente"
+              />
+              <label for="vacina-polivalente"
+                >Vacina polivalente (V10, V8...)</label
+              >
+            </div>
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="vacina-antirrabica"
+                name="vacinas"
+                value="antirrabica"
+              />
+              <label for="vacina-antirrabica">Vacina antirrábica</label>
+            </div>
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="vacina-gripe"
+                name="vacinas"
+                value="gripe"
+              />
+              <label for="vacina-gripe">Vacina contra a gripe</label>
+            </div>
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="vacina-giardia"
+                name="vacinas"
+                value="giardia"
+              />
+              <label for="vacina-giardia">Vacina contra a giárdia</label>
+            </div>
+          </div>
+          <button class="btn back-btn" data-back="block-4">Voltar</button>
+          <button class="btn next-btn" id="vacinas-next">Próximo</button>
+        </div>
+
+        <!-- Bloco 6 - Vacina Polivalente -->
+        <div
+          class="form-block conditional-block"
+          id="block-6"
+          data-condition="polivalente"
+        >
+          <h2>Vacina Polivalente</h2>
+          <div class="form-group">
+            <label for="data-polivalente">Qual a data da próxima dose?</label>
+            <input type="date" id="data-polivalente" name="data-polivalente" />
+          </div>
+          <button class="btn back-btn" data-back="block-5">Voltar</button>
+          <button class="btn next-btn" id="polivalente-next">Próximo</button>
+        </div>
+
+        <!-- Bloco 7 - Vacina Antirrábica -->
+        <div
+          class="form-block conditional-block"
+          id="block-7"
+          data-condition="antirrabica"
+        >
+          <h2>Vacina Antirrábica</h2>
+          <div class="form-group">
+            <label for="data-antirrabica">Data da próxima dose?</label>
+            <input type="date" id="data-antirrabica" name="data-antirrabica" />
+          </div>
+          <button class="btn back-btn" data-back="block-6">Voltar</button>
+          <button class="btn next-btn" id="antirrabica-next">Próximo</button>
+        </div>
+
+        <!-- Bloco 8 - Vacina Gripe -->
+        <div
+          class="form-block conditional-block"
+          id="block-8"
+          data-condition="gripe"
+        >
+          <h2>Vacina contra a Gripe Canina</h2>
+          <div class="form-group">
+            <label for="data-gripe">Data da próxima dose?</label>
+            <input type="date" id="data-gripe" name="data-gripe" />
+          </div>
+          <button class="btn back-btn" data-back="block-7">Voltar</button>
+          <button class="btn next-btn" id="gripe-next">Próximo</button>
+        </div>
+
+        <!-- Bloco 9 - Vacina Giárdia -->
+        <div
+          class="form-block conditional-block"
+          id="block-9"
+          data-condition="giardia"
+        >
+          <h2>Vacina contra a Giárdia</h2>
+          <div class="form-group">
+            <label for="data-giardia">Data da próxima dose?</label>
+            <input type="date" id="data-giardia" name="data-giardia" />
+          </div>
+          <button class="btn back-btn" data-back="block-8">Voltar</button>
+          <button class="btn next-btn" id="giardia-next">Próximo</button>
+        </div>
+
+        <!-- Bloco 10 - Remédios -->
+        <div
+          class="form-block conditional-block"
+          id="block-10"
+          data-condition="remedios"
+        >
+          <h2>Remédios</h2>
+          <div id="remedios-container">
+            <div class="remedio-item" id="remedio-1">
+              <h3>Remédio 1</h3>
+              <div class="form-group">
+                <label for="remedio-1-nome">Nome do remédio</label>
+                <input type="text" id="remedio-1-nome" name="remedio-1-nome" />
+              </div>
+              <div class="form-group">
+                <label for="remedio-1-frequencia">Frequência</label>
+                <select id="remedio-1-frequencia" name="remedio-1-frequencia">
+                  <option value="6h">a cada 6h</option>
+                  <option value="8h">a cada 8h</option>
+                  <option value="12h">a cada 12h</option>
+                  <option value="1x-dia">1x ao dia</option>
+                  <option value="2-dias">a cada 2 dias</option>
+                  <option value="1x-semana">1x na semana</option>
+                  <option value="15-dias">1x cada 15 dias</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="remedio-1-data">Próxima data</label>
+                <input type="date" id="remedio-1-data" name="remedio-1-data" />
+              </div>
+              <div class="form-group">
+                <label for="remedio-1-horario">Horário para o lembrete</label>
+                <select id="remedio-1-horario" name="remedio-1-horario">
+                  <!-- Opções de horário serão preenchidas via JavaScript -->
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="remedio-1-duracao"
+                  >Por quanto tempo será dado?</label
+                >
+                <select id="remedio-1-duracao" name="remedio-1-duracao">
+                  <option value="2">2 dias</option>
+                  <option value="3">3 dias</option>
+                  <option value="4">4 dias</option>
+                  <option value="5">5 dias</option>
+                  <option value="7">7 dias</option>
+                  <option value="10">10 dias</option>
+                  <option value="14">14 dias</option>
+                  <option value="15">15 dias</option>
+                  <option value="21">21 dias</option>
+                  <option value="30">30 dias</option>
+                  <option value="indeterminado">tempo indeterminado</option>
+                  <option value="outro">outro (especifique)</option>
+                </select>
+              </div>
+              <div
+                class="form-group outro-duracao"
+                id="remedio-1-outro-container"
+                style="display: none"
+              >
+                <label for="remedio-1-outro">Especifique a duração</label>
+                <input
+                  type="text"
+                  id="remedio-1-outro"
+                  name="remedio-1-outro"
+                />
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn add-btn" id="add-remedio">
+            ➕ Adicionar outro remédio
+          </button>
+          <button class="btn back-btn" data-back="block-9">Voltar</button>
+          <button class="btn next-btn" id="remedios-next">Próximo</button>
+        </div>
+
+        <!-- Bloco 11 - Hora da comida -->
+        <div
+          class="form-block conditional-block"
+          id="block-11"
+          data-condition="comida"
+        >
+          <h2>Hora da comida</h2>
+          <div class="form-group">
+            <label for="refeicoes-quantidade">Quantas refeições por dia?</label>
+            <select id="refeicoes-quantidade" name="refeicoes-quantidade">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div id="refeicoes-container">
+            <div class="refeicao-item" id="refeicao-1">
+              <div class="form-group">
+                <label for="refeicao-1-horario">Horário da 1ª refeição</label>
+                <select id="refeicao-1-horario" name="refeicao-1-horario">
+                  <!-- Opções de horário serão preenchidas via JavaScript -->
+                </select>
+              </div>
+            </div>
+          </div>
+          <button class="btn back-btn" data-back="block-10">Voltar</button>
+          <button class="btn next-btn" id="refeicoes-next">Próximo</button>
+        </div>
+
+        <!-- Bloco 12 - Reposição da água -->
+        <div
+          class="form-block conditional-block"
+          id="block-12"
+          data-condition="agua"
+        >
+          <h2>Reposição da água</h2>
+          <div class="form-group">
+            <label for="agua-quantidade">Quantas vezes por dia?</label>
+            <select id="agua-quantidade" name="agua-quantidade">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div id="agua-container">
+            <div class="agua-item" id="agua-1">
+              <div class="form-group">
+                <label for="agua-1-horario">Horário da 1ª reposição</label>
+                <select id="agua-1-horario" name="agua-1-horario">
+                  <!-- Opções de horário serão preenchidas via JavaScript -->
+                </select>
+              </div>
+            </div>
+          </div>
+          <button class="btn back-btn" data-back="block-11">Voltar</button>
+          <button class="btn next-btn" id="agua-next">Próximo</button>
+        </div>
+
+        <!-- Bloco 13 - Medir a glicemia -->
+        <div
+          class="form-block conditional-block"
+          id="block-13"
+          data-condition="glicemia"
+        >
+          <h2>Medir a glicemia</h2>
+          <div class="form-group">
+            <label for="glicemia-quantidade">Quantas vezes por dia?</label>
+            <select id="glicemia-quantidade" name="glicemia-quantidade">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div id="glicemia-container">
+            <div class="glicemia-item" id="glicemia-1">
+              <div class="form-group">
+                <label for="glicemia-1-horario">Horário da 1ª medição</label>
+                <select id="glicemia-1-horario" name="glicemia-1-horario">
+                  <!-- Opções de horário serão preenchidas via JavaScript -->
+                </select>
+              </div>
+            </div>
+          </div>
+          <button class="btn back-btn" data-back="block-12">Voltar</button>
+          <button class="btn next-btn" id="glicemia-next">Próximo</button>
+        </div>
+
+        <!-- Bloco 14 - Aplicação de insulina -->
+        <div
+          class="form-block conditional-block"
+          id="block-14"
+          data-condition="insulina"
+        >
+          <h2>Aplicação de insulina</h2>
+          <div class="form-group">
+            <label for="insulina-quantidade">Quantas vezes por dia?</label>
+            <select id="insulina-quantidade" name="insulina-quantidade">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div id="insulina-container">
+            <div class="insulina-item" id="insulina-1">
+              <div class="form-group">
+                <label for="insulina-1-horario">Horário da 1ª aplicação</label>
+                <select id="insulina-1-horario" name="insulina-1-horario">
+                  <!-- Opções de horário serão preenchidas via JavaScript -->
+                </select>
+              </div>
+            </div>
+          </div>
+          <button class="btn back-btn" data-back="block-13">Voltar</button>
+          <button class="btn next-btn" id="insulina-next">Próximo</button>
+        </div>
+
+        <!-- Bloco 15 - Próxima consulta -->
+        <div class="form-block" id="block-consulta">
+          <h2>
+            Próxima consulta de <span class="pet-name-display">seu pet</span>
+          </h2>
+          <p>Informe a data da próxima consulta veterinária:</p>
+
+          <div class="form-group">
+            <label for="proxima-consulta">Data da próxima consulta</label>
+            <input
+              type="date"
+              id="proxima-consulta"
+              name="proxima-consulta"
+              min="2025-01-01"
+              required
+            />
+            <div
+              class="date-warning"
+              style="display: none; color: red; font-size: 12px"
+            >
+              Por favor, selecione uma data a partir de 2025.
+            </div>
+          </div>
+
+          <div class="form-navigation">
+            <button type="button" class="btn back-btn" data-back="block-4">
+              Voltar
+            </button>
+            <button type="button" class="btn next-btn">Próximo</button>
+          </div>
+        </div>
+
+        <!-- Bloco 16 - Lembretes para documentar o dia do pet -->
+        <div
+          class="form-block conditional-block"
+          id="block-16"
+          data-condition="documentacao"
+        >
+          <h2>Lembretes para documentar o dia do pet</h2>
+          <div class="form-group">
+            <label>Dias da semana para receber lembrete</label>
+            <div class="checkbox-group dias-semana">
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="dia-seg"
+                  name="dias-semana"
+                  value="seg"
+                />
+                <label for="dia-seg">Segunda</label>
+              </div>
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="dia-ter"
+                  name="dias-semana"
+                  value="ter"
+                />
+                <label for="dia-ter">Terça</label>
+              </div>
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="dia-qua"
+                  name="dias-semana"
+                  value="qua"
+                />
+                <label for="dia-qua">Quarta</label>
+              </div>
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="dia-qui"
+                  name="dias-semana"
+                  value="qui"
+                />
+                <label for="dia-qui">Quinta</label>
+              </div>
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="dia-sex"
+                  name="dias-semana"
+                  value="sex"
+                />
+                <label for="dia-sex">Sexta</label>
+              </div>
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="dia-sab"
+                  name="dias-semana"
+                  value="sab"
+                />
+                <label for="dia-sab">Sábado</label>
+              </div>
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="dia-dom"
+                  name="dias-semana"
+                  value="dom"
+                />
+                <label for="dia-dom">Domingo</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="documentacao-horario"
+              >Horário único para todos os dias</label
+            >
+            <select id="documentacao-horario" name="documentacao-horario">
+              <!-- Opções de horário serão preenchidas via JavaScript -->
+            </select>
+          </div>
+          <button class="btn back-btn" data-back="block-15">Voltar</button>
+          <button class="btn next-btn" id="documentacao-next">Próximo</button>
+        </div>
+
+        <!-- Bloco Final -->
+        <div class="form-block" id="block-final">
+          <h2>Tudo certo por aqui! 💙✨</h2>
+          <p>
+            O(A) <span class="pet-name-display">seu pet</span> vai agradecer
+            (mesmo que em latidos)!
+          </p>
+          <p>
+            Agora é com a gente: vamos te ajudar a lembrar dos cuidados
+            importantes, no momento certinho, com toda a atenção e carinho que
+            ele merece. 💌
+          </p>
+          <p>
+            Fica de olho no WhatsApp — em breve chega o primeiro lembrete feito
+            sob medida pra vocês dois.
+          </p>
+          <p>
+            Ah, e se quiser indicar pra outro tutor, a matilha agradece! É só
+            compartilhar esse link no WhatsApp mesmo. 🐶🦴
+          </p>
+          <p>Obrigado por confiar na late.AI.</p>
+          <p>
+            Você tá fazendo a diferença na vida do seu melhor amigo — e a gente
+            tá aqui pra te lembrar disso, todos os dias. 🐾
+          </p>
+
+          <div
+            id="success-message"
+            style="
+              display: none;
+              margin: 20px 0;
+              padding: 15px;
+              background-color: #d4edda;
+              color: #155724;
+              border-radius: 5px;
+              text-align: center;
+            "
+          >
+            Dados enviados com sucesso! 🎉
+          </div>
+
+          <div
+            class="share-container"
+            style="margin-top: 30px; text-align: center"
+          >
+            <p>Compartilhe este serviço com outros tutores de pets:</p>
+            <button class="btn share-btn" id="share-whatsapp">
+              Compartilhar via WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
